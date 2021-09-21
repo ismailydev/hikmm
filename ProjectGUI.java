@@ -1,3 +1,5 @@
+package test.hikmm;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -11,15 +13,17 @@ public class ProjectGUI implements ActionListener {
     JFrame frame;
     JPanel panel1, panel2;
     JLabel logoLabel, logoLabelDesc1, logoLabelDesc2, introLabel;
+    JTextField userField;
+    JPasswordField passwordField;
     ImageIcon logo, logoWithBg, introImage;
     JButton signInButton, signUpButton;
     JToggleButton tg;
 
     ProjectGUI() {
 
-        logo = new ImageIcon("Files\\logo.png");
-        logoWithBg = new ImageIcon("Files\\logoWithBg.png");
-        // introImage = new ImageIcon("Files\\introImage.jpg");
+        logo = new ImageIcon("test\\hikmm\\Files\\logo.png");
+        logoWithBg = new ImageIcon("test\\hikmm\\Files\\logoWithBg.png");
+        // introImage = new ImageIcon("test\\hikmm\\Files\\introImage.jpg");
 
         // panel1
 
@@ -60,24 +64,29 @@ public class ProjectGUI implements ActionListener {
         signInButton = new JButton("Sign in");
         signInButton.setBackground(new Color(primaryColor));
         signInButton.setForeground(new Color(secondaryColor));
+        signInButton.setFont(new Font(secondaryFont, Font.PLAIN, 20));
+        signInButton.setSize(150, 50);
         signInButton.setFocusable(false);
         signInButton.addActionListener(this);
 
         signUpButton = new JButton("Sign up");
         signUpButton.setBackground(new Color(primaryColor));
         signUpButton.setForeground(new Color(secondaryColor));
+        signUpButton.setFont(new Font(secondaryFont, Font.PLAIN, 20));
+        signUpButton.setSize(150, 50);
         signUpButton.setFocusable(false);
         signUpButton.addActionListener(this);
 
         panel2 = new JPanel();
         panel2.setBounds(450, 0, 450, 600);
+        panel2.setLayout(new FlowLayout());
         panel2.setBackground(new Color(secondaryColor));
         // panel2.add(introLabel);
         panel2.add(signInButton);
         panel2.add(signUpButton);
 
         frame = new JFrame();
-        frame.setTitle("HIKMM Store Management");
+        frame.setTitle("HIKMM");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setIconImage(logoWithBg.getImage()); // change app icon
         frame.setSize(917, 639); // to make the frame without the top menu a 900 x 600 exactly
@@ -90,11 +99,11 @@ public class ProjectGUI implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == signInButton) {
-            // SignInPage signIn = new SignInPage();
+            // new SignInPage();
             System.out.println("Sign in");
         }
         if (e.getSource() == signUpButton) {
-            // SignUpPage signUp = new SignUpPage();
+            // new SignUpPage();
             System.out.println("Sign up");
         }
     }
