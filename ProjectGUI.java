@@ -98,5 +98,4 @@ public class ProjectGUI implements ActionListener {
             System.out.println("Sign up");
         }
     }
-
 }
