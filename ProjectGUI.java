@@ -9,9 +9,9 @@ public class ProjectGUI implements ActionListener {
     String primaryFont = "Sora";
     String secondaryFont = "Montserrat";
     JFrame frame;
-    JPanel panel1, panel2;
-    JLabel logoLabel, logoLabelDesc1, logoLabelDesc2, introLabel;
-    JTextField userField;
+    JPanel panel1, panel2, signingPanel;
+    JLabel logoLabel, logoLabelDesc1, logoLabelDesc2, introLabel, usernameLabel, passwordLabel;
+    JTextField usernameField;
     JPasswordField passwordField;
     ImageIcon logo, logoWithBg, introImage;
     JButton signInButton, signUpButton;
@@ -19,8 +19,8 @@ public class ProjectGUI implements ActionListener {
 
     ProjectGUI() {
 
-        logo = new ImageIcon("test\\hikmm\\Files\\logo.png");
-        logoWithBg = new ImageIcon("test\\hikmm\\Files\\logoWithBg.png");
+        logo = new ImageIcon("Files\\logo.png");
+        logoWithBg = new ImageIcon("Files\\logoWithBg.png");
         // introImage = new ImageIcon("test\\hikmm\\Files\\introImage.jpg");
 
         // panel1
@@ -59,6 +59,11 @@ public class ProjectGUI implements ActionListener {
         // introLabel.setIcon(introImage);
         // introLabel.setBounds(0, -15, 450, 600);
 
+        usernameLabel = new JLabel("Username: ");
+        passwordLabel = new JLabel("Password: ");
+        usernameField = new JTextField(20);
+        passwordField = new JPasswordField(20);
+
         signInButton = new JButton("Sign in");
         signInButton.setBackground(new Color(primaryColor));
         signInButton.setForeground(new Color(secondaryColor));
@@ -75,13 +80,26 @@ public class ProjectGUI implements ActionListener {
         signUpButton.setFocusable(false);
         signUpButton.addActionListener(this);
 
+        signingPanel = new JPanel();
+        // signingPanel.setBounds(450, 200, 450, 200);
+        signingPanel.setBackground(Color.BLACK);
+        signingPanel.add(usernameLabel);
+        signingPanel.add(usernameField);
+        signingPanel.add(passwordLabel);
+        signingPanel.add(passwordField);
+        signingPanel.add(signInButton);
+        signingPanel.add(signUpButton);
+
         panel2 = new JPanel();
+        panel2.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        signingPanel.setMinimumSize(new Dimension(600, 600));
+        signingPanel.setMaximumSize(new Dimension(600, 600));
+        signingPanel.setPreferredSize(new Dimension(600, 600));
         panel2.setBounds(450, 0, 450, 600);
-        panel2.setLayout(new FlowLayout());
         panel2.setBackground(new Color(secondaryColor));
+        panel2.add(signingPanel);
         // panel2.add(introLabel);
-        panel2.add(signInButton);
-        panel2.add(signUpButton);
 
         frame = new JFrame();
         frame.setTitle("HIKMM");
