@@ -687,6 +687,9 @@ video {
 .h-8 {
   height: 2rem;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -1125,6 +1128,10 @@ video {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1145,6 +1152,9 @@ video {
 }
 .pr-3 {
   padding-right: 0.75rem;
+}
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
