@@ -15,7 +15,7 @@ router.get("/signin", (req, res) => {
     res.render("signin");
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", ensureAuth, async (req, res) => {
     try {
         const stores = await Store.find({ user: req.user.id }).lean();
         const products = [];
@@ -26,7 +26,6 @@ router.get("/dashboard", async (req, res) => {
                     .count(),
             });
         }
-        console.log(products);
         res.render("dashboard", {
             name: req.user.displayName,
             stores: stores,
@@ -37,7 +36,7 @@ router.get("/dashboard", async (req, res) => {
     }
 });
 
-router.get("/transactions", async (req, res) => {
+router.get("/transactions", ensureAuth, async (req, res) => {
     try {
         const transactions = await Transaction.find({
             user: req.user.id,
