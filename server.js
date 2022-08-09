@@ -60,6 +60,6 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/stores", require("./routes/stores"));
-// app.use("*", (req, res) => res.render("404"));
+app.use("*", (req, res) => res.render("404"));
 
 app.listen(PORT, () => console.log(`Server listening on PORT ${PORT}`));
