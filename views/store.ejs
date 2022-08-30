@@ -20,94 +20,101 @@
         <div class="absolute bg-black h-full opacity-75 inset-0 z-0"></div>
         <div class="relative w-11/12 mx-auto flex flex-col items-center justify-center">
             <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-                <% for(let i=0; i<products.length; i++) {%>
-                    <div class="flex flex-col">
-                        <div class="bg-gray-900 shadow-md  rounded-3xl p-4">
-                            <div class="flex-none lg:flex">
-                                <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
-                                    <img src="https://images.unsplash.com/photo-1617360547704-3da8b5363369?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                        alt="Just a flower"
-                                        class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
-                                </div>
-                                <div class="flex-auto ml-3 justify-evenly py-2">
-                                    <div class="flex flex-wrap ">
-                                        <div class="w-full flex-none text-xs text-cyan-700 font-medium ">
-                                            Product
+                <% if(stores.length===0) { %>
+                    <h1 class="mt-10 text-slate-400">You have no products available.</h1>
+                    <% } else { %>
+                        <% for(let i=0; i<products.length; i++) {%>
+                            <div class="flex flex-col">
+                                <div class="bg-gray-900 shadow-md  rounded-3xl p-4">
+                                    <div class="flex-none lg:flex">
+                                        <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                            <img src="https://images.unsplash.com/photo-1617360547704-3da8b5363369?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                alt="Just a flower"
+                                                class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
                                         </div>
-                                        <h2 class="flex-auto text-lg text-gray-100 font-medium">
-                                            <%=products[i].name %>
-                                        </h2>
-                                    </div>
-                                    <div class="flex items-center justify-between py-4 text-sm text-gray-500">
-                                        <div class="flex items-center justify-center">
-                                            <svg class="h-4 w-4 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-                                            </svg>
-                                            <p class="text-gray-200">
-                                                <%=products[i].quantity %> pieces
-                                            </p>
-                                        </div>
-                                        <div class="flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
-                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                                            </svg>
-                                            <% if(products[i].quantity==0) { %>
-                                                <span class="bg-red-400 text-gray-800 rounded-md px-2">
-                                                    no stock
-                                                </span>
-                                                <% } else if(products[i].quantity <=5) { %>
-                                                    <span class="bg-yellow-400 text-gray-800 rounded-md px-2">
-                                                        low
-                                                    </span>
-                                                    <% } else { %>
-                                                        <span class="bg-green-400 text-gray-800 rounded-md px-2">
-                                                            available
+                                        <div class="flex-auto ml-3 justify-evenly py-2">
+                                            <div class="flex flex-wrap ">
+                                                <div class="w-full flex-none text-xs text-cyan-700 font-medium ">
+                                                    Product
+                                                </div>
+                                                <h2 class="flex-auto text-lg text-gray-100 font-medium">
+                                                    <%=products[i].name %>
+                                                </h2>
+                                            </div>
+                                            <div class="flex items-center justify-between py-4 text-sm text-gray-500">
+                                                <div class="flex items-center justify-center">
+                                                    <svg class="h-4 w-4 mr-2 text-gray-400"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
+                                                    </svg>
+                                                    <p class="text-gray-200">
+                                                        <%=products[i].quantity %> pieces
+                                                    </p>
+                                                </div>
+                                                <div class="flex items-center justify-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-5 w-5 mr-2 text-gray-400" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                                    </svg>
+                                                    <% if(products[i].quantity==0) { %>
+                                                        <span class="bg-red-400 text-gray-800 rounded-md px-2">
+                                                            no stock
                                                         </span>
-                                                        <% } %>
+                                                        <% } else if(products[i].quantity <=5) { %>
+                                                            <span class="bg-yellow-400 text-gray-800 rounded-md px-2">
+                                                                low
+                                                            </span>
+                                                            <% } else { %>
+                                                                <span
+                                                                    class="bg-green-400 text-gray-800 rounded-md px-2">
+                                                                    available
+                                                                </span>
+                                                                <% } %>
+                                                </div>
+                                            </div>
+                                            <div class="flex p-4 pb-2 border-t border-gray-700"></div>
+                                            <form class="flex items-center space-x-3 text-sm font-medium" method="POST"
+                                                action="/stores/<%= store._id%>/products/<%= products[i]._id%>/transfer">
+                                                <input type="hidden" name="_method" value="PUT" />
+                                                <div class="flex-auto flex space-x-3">
+                                                    <input type="number" min="0"
+                                                        class="w-20 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 "
+                                                        name="quantity" placeholder="0">
+                                                </div>
+                                                <div class="flex-auto flex space-x-3">
+                                                    <select name="store" id="store"
+                                                        class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                        <% for(let i=0; i<stores.length; i++) {%>
+                                                            <option value="<%=stores[i].name %>">
+                                                                <%=stores[i].name %>
+                                                            </option>
+                                                            <% } %>
+                                                    </select>
+                                                    </button>
+                                                </div>
+                                                <button
+                                                    class="flex gap-1 z-10 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
+                                                    type="submit" aria-label="like">
+                                                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                                    </svg>
+                                                    Transfer</button>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="flex p-4 pb-2 border-t border-gray-700"></div>
-                                    <form class="flex items-center space-x-3 text-sm font-medium" method="POST"
-                                        action="/stores/<%= store._id%>/products/<%= products[i]._id%>/transfer">
-                                        <input type="hidden" name="_method" value="PUT" />
-                                        <div class="flex-auto flex space-x-3">
-                                            <input type="number" min="0"
-                                                class="w-20 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 "
-                                                name="quantity" placeholder="0">
-                                        </div>
-                                        <div class="flex-auto flex space-x-3">
-                                            <select name="store" id="store"
-                                                class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
-                                                <% for(let i=0; i<stores.length; i++) {%>
-                                                    <option value="<%=stores[i].name %>">
-                                                        <%=stores[i].name %>
-                                                    </option>
-                                                    <% } %>
-                                            </select>
-                                            </button>
-                                        </div>
-                                        <button
-                                            class="flex gap-1 z-10 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
-                                            type="submit" aria-label="like">
-                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                                            </svg>
-                                            Transfer</button>
-                                    </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <% } %>
+                            <% } %>
+                                <% } %>
             </div>
         </div>
     </div>
