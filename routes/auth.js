@@ -13,11 +13,11 @@ router.get(
     }
 );
 
-// router.get("/logout", async (req, res) => {
-//     req.logout(function (err) {
-//         if (err) return next(err);
-//         res.redirect("/");
-//     });
-// });
+router.get("/logout", async (req, res) => {
+    req.logout(function (err) {
+        if (err) return next(err);
+        res.redirect("/");
+    });
+});
 
 module.exports = router;
