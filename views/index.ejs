@@ -1,249 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/style.css" rel="stylesheet" />
-    <title>HIKMM | Your Digital Store</title>
-</head>
-
-<body>
-    <section class="overflow-hidden">
-        <nav
-            class="navbar navbar-expand-lg shadow-md py-2 bg-gray-900 relative flex items-center w-full justify-between">
-            <div class="px-6 w-full flex flex-wrap items-center justify-between">
-                <div class="flex items-center">
-                    <button
-                        class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentY"
-                        aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-5" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
-                            </path>
-                        </svg>
-                    </button>
-                    <a class="navbar-brand text-cyan-500 flex items-center" href="">
-                        <svg class="w-5 h-5 ml-2 lg:ml-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path fill="currentColor"
-                                d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z">
-                            </path>
-                        </svg>
-                        <span>HIKMM</span>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-                    <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="/dashboard" data-mdb-ripple="true" data-mdb-ripple-color="light">Dashboard</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex items-center lg:ml-auto">
-                    <a href="#home">
-                        <button type="button"
-                            class="inline-block px-6 py-2.5 mr-2 bg-transparent text-cyan-500 font-medium text-xs leading-tight uppercase rounded focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light">Home</button>
-                    </a>
-                    <a href="#features">
-                        <button type="button"
-                            class="inline-block px-6 py-2.5 mr-2 bg-transparent text-gray-300 font-medium text-xs leading-tight uppercase rounded focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light">Features</button>
-                    </a>
-                    <a href="#about-us">
-                        <button type="button"
-                            class="inline-block px-6 py-2.5 mr-2 bg-transparent text-gray-300 font-medium text-xs leading-tight uppercase rounded focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light">About Us</button>
-                    </a>
-                    <a href="/signin">
-                        <button type="button"
-                            class="inline-block px-6 py-2.5 mr-2 bg-transparent text-gray-300 font-medium text-xs leading-tight uppercase rounded hover:text-cyan-700 hover:bg-white focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light">Sign In</button>
-                    </a>
-                    <a href="/signup">
-                        <button type="button"
-                            class="inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light">Sign Up</button></a>
-                </div>
-            </div>
-        </nav>
-
-        <div class="relative overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%; background-image: url('/images/pexels-alexander-isreb-1797428.jpg');
+<%- include('partials/header') -%>
+    <div class="relative mt-12 overflow-hidden bg-no-repeat bg-cover" style="background-position: 50%; background-image: url('/images/pexels-alexander-isreb-1797428.jpg');
                           height: 500px;">
-            <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-                style="background-color: rgba(17, 24, 39, 0.5);">
-                <div class="flex justify-center items-center h-full">
-                    <div class="text-center text-white px-6 md:px-12">
-                        <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best
-                            platform to manage<br /><span>your store</span></h1>
-                        <p class="pb-10 text-xl opacity-80">Control and manage your products in the warehouse in
-                            real-time<br />and make it easier to develop your business.
-                        </p>
-                        <a class="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Get
-                            started</a>
-                        <a class="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                            data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Learn
-                            more</a>
-                    </div>
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+            style="background-color: rgba(17, 24, 39, 0.5);">
+            <div class="flex justify-center items-center h-full">
+                <div class="text-center text-white px-6 md:px-12">
+                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best
+                        platform to manage<br /><span>your store</span></h1>
+                    <p class="pb-10 text-xl opacity-80">Control and manage your products in the warehouse in
+                        real-time<br />and make it easier to develop your business.
+                    </p>
+                    <a class="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-opacity-50 focus:outline-none focus:ring-0 transition duration-150 ease-in-out hover:bg-slate-800 hover:shadow-lg focus:bg-slate-800 focus:shadow-lg active:bg-slate-900 active:shadow-lg"
+                        data-mdb-ripple="true" data-mdb-ripple-color="light" href="/signup" role="button">Get
+                        started</a>
+                    <a class="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none hover:text-slate-300 focus:ring-0 transition duration-150 ease-in-out"
+                        data-mdb-ripple="true" data-mdb-ripple-color="light" href="#features" role="button">Learn
+                        more</a>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="relative top-0 md:top-2 -mt-2.5 md:-mt-4 lg:-mt-6 xl:-mt-10"
+        style="height: 50px; transform: scale(2); transform-origin: top center; color: #fff;">
+        <svg viewBox="0 0 2880 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0 48 L 1437.5 48 L 2880 48 L 2880 0 L 2160 0 C 1453.324 60.118 726.013 4.51 720 0 L 0 0 L 0 48 Z"
+                fill="#111827"></path>
+        </svg>
+    </div>
+    </section>
+    <section
+        class="relative -top-4 md:top-0 flex flex-col items-center bg-gradient-to-r from-cyan-100 via-cyan-50 to-cyan-100 py-12">
+        <h2 class="text-center text-slate-800 text-2xl md:text-5xl font-bold tracking-tight p-4">Stay up to Date with
+        </h2>
+        <h5 class="text-center text-slate-500 text-xl font-bold tracking-tight">All the Latest News and Announcements
+        </h5>
+        <a href="/subscribe" class="text-center py-4">
+            <button type="button"
+                class="inline-block px-6 py-2.5 bg-[#111827] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-800 hover:shadow-lg focus:bg-slate-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-900 active:shadow-lg transition duration-150 ease-in-out"
+                data-mdb-ripple="true" data-mdb-ripple-color="light">Subscribe</button></a>
+        </div>
+    </section>
+    <section class="bg-[#111827] pb-20 w-full" id="features">
+        <h2 class="text-center text-slate-100 text-2xl md:text-5xl font-bold tracking-tight p-12">Why you
+            should choose<br>HIKMM</h2>
+        <div class="w-11/12 mx-auto grid md:grid-cols-2 grid-cols-1 place-items-center">
+            <div class="m-10 flex-col md:flex-row items-center flex w-4/5 bg-cyan-50 rounded-xl p-8 md:p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="text-slate-800 w-[100px] md:w-[200px] md:pl-5">
+                    <path
+                        d="M18.75 12.75h1.5a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5zM12 6a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 6zM12 18a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 18zM3.75 6.75h1.5a.75.75 0 100-1.5h-1.5a.75.75 0 000 1.5zM5.25 18.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 010 1.5zM3 12a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 013 12zM9 3.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM12.75 12a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM9 15.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                </svg>
 
-        <div class="-mt-2.5 md:-mt-4 lg:-mt-6 xl:-mt-10"
-            style="height: 50px; transform: scale(2); transform-origin: top center; color: #fff;">
-            <svg viewBox="0 0 2880 48" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M 0 48 L 1437.5 48 L 2880 48 L 2880 0 L 2160 0 C 1453.324 60.118 726.013 4.51 720 0 L 0 0 L 0 48 Z"
-                    fill="#111827"></path>
-            </svg>
-        </div>
-    </section>
-    <section>
-        <div>
-            <div class="flex justify-center">
-                <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-                    <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-                        src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-                    <div class="p-6 flex flex-col justify-start">
-                        <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                        <p class="text-gray-700 text-base mb-4">
-                            This is a wider card with supporting text below as a natural lead-in to additional content.
-                            This content
-                            is a little bit longer.
-                        </p>
-                        <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <figure class="md:flex w-1/2 bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-                <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/sarah-dayan.jpg"
-                    alt="" width="384" height="512">
                 <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                    <blockquote>
-                        <p class="text-lg font-medium">
-                            “Tailwind CSS is the only framework that I've seen scale
-                            on large teams. It’s easy to customize, adapts to any design,
-                            and the build size is tiny.”
-                        </p>
-                    </blockquote>
-                    <figcaption class="font-medium">
-                        <div class="text-sky-500 dark:text-sky-400">
-                            Sarah Dayan
+                    <div class="font-medium">
+                        <div class="text-sky-500">
+                            Simple
                         </div>
-                        <div class="text-slate-700 dark:text-slate-500">
-                            Staff Engineer, Algolia
+                        <div class="text-slate-700">
+                            To Manage
                         </div>
-                    </figcaption>
-                </div>
-            </figure>
-        </div>
-    </section>
-    <section>
-        <h2>Why you should choose<br>HIKMM</h2>
-        <div>
-            <div>
-                <i></i>
-                <div>
-                    <h4>Easy to Mangage</h4>
-                    <p>Product management with various featrues such as product stock and transactions.</p>
-                </div>
-            </div>
-            <div>
-                <i></i>
-                <div>
-                    <h4>Easy to Use</h4>
-                    <p>A friendly interface that is very easy to use even for ordinary people who are not tech savvy.
+                    </div>
+                    <p class="text-lg text-slate-600 font-medium">
+                        Product management with various featrues such as product stock and transactions.
                     </p>
                 </div>
             </div>
-            <div>
-                <i></i>
-                <div>
-                    <h4>Web Based</h4>
-                    <p>You don't need to worry about any storage, it is fully web based and mobile responsive allowing
-                        you to control in more than one device.</p>
-                </div>
-            </div>
-            <div>
-                <i></i>
-                <div>
-                    <h4>Work Efficiently</h4>
-                    <p>Reduce manual works, avoid errors and speed up completing work.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section></section>
-    <section>
-        <div>
-            <div>
-                <h2>Have any<br>questions?</h2>
-                <p>Feel free to ask if you have any question.</p>
-                <p>We will respond as soon as possible.</p>
-            </div>
-            <div>
-                <div>
-                    <label for="name">Name</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for="name">Email</label>
-                    <input type="email">
-                </div>
-                <div>
-                    <label for="name">Question</label>
-                    <textarea name="question" id="question" cols="30" rows="10"></textarea>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div>
-            <div>
-                <span></span>
-                <p>All in one platform for your business</p>
-            </div>
-            <div>
-                <div>
-                    <h3>Company</h3>
-                    <div>
-                        <a href="#">Email Address</a>
-                        <a href="#">Services</a>
-                        <a href="#">Career</a>
-                        <a href="#">Community</a>
-                        <a href="#">FAQ</a>
-                    </div>
-                </div>
-                <div>
-                    <h3>Features</h3>
-                    <div>
-                        <a href="#">Accountancy</a>
-                        <a href="#">Invoice</a>
-                        <a href="#">Financy Statements</a>
-                        <a href="#">Inventory</a>
-                    </div>
-                </div>
-                <div>
-                    <h3>Resources</h3>
-                    <div>
-                        <a href="#">Blog</a>
-                        <a href="#">Social Media</a>
-                        <a href="#">API Development</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                2022 Copyright HIKMM
-            </div>
-        </div>
-    </footer>
-</body>
+            <div class="m-10 flex-col md:flex-row items-center flex w-4/5 bg-cyan-50 rounded-xl p-8 md:p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="text-slate-800 w-[100px] md:w-[200px] md:pl-5">
+                    <path d="M19.5 6h-15v9h15V6z" />
+                    <path fill-rule="evenodd"
+                        d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v11.25C1.5 17.16 2.34 18 3.375 18H9.75v1.5H6A.75.75 0 006 21h12a.75.75 0 000-1.5h-3.75V18h6.375c1.035 0 1.875-.84 1.875-1.875V4.875C22.5 3.839 21.66 3 20.625 3H3.375zm0 13.5h17.25a.375.375 0 00.375-.375V4.875a.375.375 0 00-.375-.375H3.375A.375.375 0 003 4.875v11.25c0 .207.168.375.375.375z"
+                        clip-rule="evenodd" />
+                </svg>
 
-</html>
+                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                    <div class="font-medium">
+                        <div class="text-cyan-500">
+                            Easy
+                        </div>
+                        <div class="text-slate-700">
+                            To Use
+                        </div>
+                    </div>
+                    <p class="text-lg text-slate-600 font-medium">
+                        A friendly interface that is very easy to use for anyone who are not even tech savvy.
+                    </p>
+                </div>
+            </div>
+            <div class="m-10 flex-col md:flex-row items-center flex w-4/5 bg-cyan-50 rounded-xl p-8 md:p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="text-slate-800 w-[100px] md:w-[200px] md:pl-5">
+                    <path
+                        d="M21.721 12.752a9.711 9.711 0 00-.945-5.003 12.754 12.754 0 01-4.339 2.708 18.991 18.991 0 01-.214 4.772 17.165 17.165 0 005.498-2.477zM14.634 15.55a17.324 17.324 0 00.332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 00.332 4.647 17.385 17.385 0 005.268 0zM9.772 17.119a18.963 18.963 0 004.456 0A17.182 17.182 0 0112 21.724a17.18 17.18 0 01-2.228-4.605zM7.777 15.23a18.87 18.87 0 01-.214-4.774 12.753 12.753 0 01-4.34-2.708 9.711 9.711 0 00-.944 5.004 17.165 17.165 0 005.498 2.477zM21.356 14.752a9.765 9.765 0 01-7.478 6.817 18.64 18.64 0 001.988-4.718 18.627 18.627 0 005.49-2.098zM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 001.988 4.718 9.765 9.765 0 01-7.478-6.816zM13.878 2.43a9.755 9.755 0 016.116 3.986 11.267 11.267 0 01-3.746 2.504 18.63 18.63 0 00-2.37-6.49zM12 2.276a17.152 17.152 0 012.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0112 2.276zM10.122 2.43a18.629 18.629 0 00-2.37 6.49 11.266 11.266 0 01-3.746-2.504 9.754 9.754 0 016.116-3.985z" />
+                </svg>
+
+                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                    <div class="font-medium">
+                        <div class="text-sky-500">
+                            Web
+                        </div>
+                        <div class="text-slate-700">
+                            Based
+                        </div>
+                    </div>
+                    <p class="text-lg text-slate-600 font-medium">
+                        Fully web based and mobile responsive allowing you to control with one device.
+                    </p>
+                </div>
+            </div>
+            <div class="m-10 flex-col md:flex-row items-center flex w-4/5 bg-cyan-50 rounded-xl p-8 md:p-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="text-slate-800 w-[100px] md:w-[200px] md:pl-5">
+                    <path fillRule="evenodd"
+                        d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z"
+                        clipRule="evenodd" />
+                </svg>
+                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                    <div class="font-medium">
+                        <div class="text-sky-500">
+                            Work
+                        </div>
+                        <div class="text-slate-700">
+                            Efficiently
+                        </div>
+                    </div>
+                    <p class="text-lg text-slate-600 font-medium">
+                        Reduce your manual works, save your time, avoid errors and speed up completing work.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flex flex-col items-center bg-gradient-to-r from-cyan-100 via-cyan-50 to-cyan-100 py-12">
+        <h2 class="text-center text-slate-800 text-2xl md:text-5xl font-bold tracking-tight p-4">Quick to Get Started,
+            Easy to Grow</h2>
+        <h5 class="text-center text-slate-500 text-xl font-bold tracking-tight">Sign Up Now and Try it
+        </h5>
+        <a href="/signup" class="text-center py-4">
+            <button type="button"
+                class="inline-block px-6 py-2.5 bg-[#111827] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-800 hover:shadow-lg focus:bg-slate-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-900 active:shadow-lg transition duration-150 ease-in-out"
+                data-mdb-ripple="true" data-mdb-ripple-color="light">Get Started</button></a>
+        </div>
+    </section>
+
+    <%- include('components/contact') -%>
+        <%- include('partials/footer') -%>
+            </body>
+
+            </html>
