@@ -1,0 +1,356 @@
+<%- include('partials/header') -%>
+    <div class="p-12 animated fadeIn faster flex justify-center backdrop-grayscale-0 items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
+        style="background-image: url(https://images.unsplash.com/photo-1507608158173-1dcec673a2e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);"
+        id="modal-id">
+        <div class="absolute bg-black h-full opacity-80 inset-0 z-0"></div>
+        <div class="relative flex flex-col items-center justify-center">
+            <div class="flex w-full text-white items-center justify-between">
+                <h2 class="text-xl py-12">Welcome User</h2>
+                <div class="flex gap-4 items-center">
+                    <p class="">Stores: 23</p>
+                    <a href="/store/add">
+                        <button type="button"
+                            class="inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
+                            data-mdb-ripple="true" data-mdb-ripple-color="light">Add New Store
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+                <div class="flex flex-col">
+                    <div class="bg-gray-200 shadow-md  rounded-3xl p-4">
+                        <div class="flex-none lg:flex">
+                            <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+                                    alt="Just a flower"
+                                    class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+                            </div>
+                            <div class="flex-auto ml-3 justify-evenly py-2">
+                                <div class="flex flex-wrap ">
+                                    <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                                        Store
+                                    </div>
+                                    <h2 class="flex-auto text-lg font-medium">Product Name</h2>
+                                </div>
+                                <p class="mt-3"></p>
+                                <div class="flex py-4 text-sm text-gray-500">
+                                    <div class="flex-1 inline-flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <p class="">Location</p>
+                                    </div>
+                                    <div class="flex-1 inline-flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <p class="">22-02-2022</p>
+                                    </div>
+                                </div>
+                                <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
+                                <div class="flex space-x-3 text-sm font-medium">
+                                    <div class="flex-auto flex space-x-3">
+                                        <button
+                                            class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                            <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                <svg class="w-4 h-4 opacity-80" viewBox="0 0 45 45" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                        stroke="black" stroke-width="4" stroke-linejoin="round" />
+                                                    <path
+                                                        d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                        stroke="black" stroke-width="4" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
+                                            <span>62 Products</span>
+                                        </button>
+                                    </div>
+                                    <button
+                                        class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                        type="button" aria-label="like">Go to Store</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col ">
+                    <div class="bg-gray-200 shadow-md  rounded-3xl p-4">
+                        <div class="flex-none lg:flex">
+                            <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                <img src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                                    alt="Just a flower"
+                                    class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+                            </div>
+                            <div class="flex-auto ml-3 justify-evenly py-2">
+                                <div class="flex flex-wrap ">
+                                    <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                                        Shop
+                                    </div>
+                                    <h2 class="flex-auto text-lg font-medium">Umbrella Corporation</h2>
+                                </div>
+                                <p class="mt-3"></p>
+                                <div class="flex py-4  text-sm text-gray-500">
+                                    <div class="flex-1 inline-flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <p class="">Mumbai,MH</p>
+                                    </div>
+                                    <div class="flex-1 inline-flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <p class="">05-25-2021</p>
+                                    </div>
+                                </div>
+                                <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
+                                <div class="flex space-x-3 text-sm font-medium">
+                                    <div class="flex-auto flex space-x-3">
+                                        <button
+                                            class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                            <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                <svg class="w-4 h-4 opacity-80" viewBox="0 0 45 45" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                        stroke="black" stroke-width="4" stroke-linejoin="round" />
+                                                    <path
+                                                        d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                        stroke="black" stroke-width="4" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
+                                            <span>60 Products</span>
+                                        </button>
+                                    </div>
+                                    <button
+                                        class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                        type="button" aria-label="like">Edit Shop</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col ">
+                    <a href="/store">
+                        <div class="bg-gray-200 shadow-md  rounded-3xl p-4">
+                            <div class="flex-none lg:flex">
+                                <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                    <img src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                                        alt="Just a flower"
+                                        class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+                                </div>
+                                <div class="flex-auto ml-3 justify-evenly py-2">
+                                    <div class="flex flex-wrap ">
+                                        <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                                            Shop
+                                        </div>
+                                        <h2 class="flex-auto text-lg font-medium">Umbrella Corporation</h2>
+                                    </div>
+                                    <p class="mt-3"></p>
+                                    <div class="flex py-4  text-sm text-gray-500">
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                </path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                            <p class="">Mumbai,MH</p>
+                                        </div>
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <p class="">05-25-2021</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
+                                    <div class="flex space-x-3 text-sm font-medium">
+                                        <div class="flex-auto flex space-x-3">
+                                            <button
+                                                class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                    <svg class="w-4 h-4 opacity-80" viewBox="0 0 45 45" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                            stroke="black" stroke-width="4" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                            stroke="black" stroke-width="4" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                                <span>60 Products</span>
+                                            </button>
+                                        </div>
+                                        <button
+                                            class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                            type="button" aria-label="like">Edit Shop</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex flex-col ">
+                    <a href="/store">
+                        <div class="bg-gray-200 shadow-md  rounded-3xl p-4">
+                            <div class="flex-none lg:flex">
+                                <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                    <img src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                                        alt="Just a flower"
+                                        class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+                                </div>
+                                <div class="flex-auto ml-3 justify-evenly py-2">
+                                    <div class="flex flex-wrap ">
+                                        <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                                            Shop
+                                        </div>
+                                        <h2 class="flex-auto text-lg font-medium">Umbrella Corporation</h2>
+                                    </div>
+                                    <p class="mt-3"></p>
+                                    <div class="flex py-4  text-sm text-gray-500">
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                </path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                            <p class="">Mumbai,MH</p>
+                                        </div>
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <p class="">05-25-2021</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
+                                    <div class="flex space-x-3 text-sm font-medium">
+                                        <div class="flex-auto flex space-x-3">
+                                            <button
+                                                class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                    <svg class="w-4 h-4 opacity-80" viewBox="0 0 45 45" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                            stroke="black" stroke-width="4" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                            stroke="black" stroke-width="4" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                                <span>60 Products</span>
+                                            </button>
+                                        </div>
+                                        <button
+                                            class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                            type="button" aria-label="like">Edit Shop</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex flex-col ">
+                    <a href="/store">
+                        <div class="bg-gray-200 shadow-md  rounded-3xl p-4">
+                            <div class="flex-none lg:flex">
+                                <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                    <img src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
+                                        alt="Just a flower"
+                                        class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
+                                </div>
+                                <div class="flex-auto ml-3 justify-evenly py-2">
+                                    <div class="flex flex-wrap ">
+                                        <div class="w-full flex-none text-xs text-blue-700 font-medium ">
+                                            Shop
+                                        </div>
+                                        <h2 class="flex-auto text-lg font-medium">Umbrella Corporation</h2>
+                                    </div>
+                                    <p class="mt-3"></p>
+                                    <div class="flex py-4  text-sm text-gray-500">
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                                </path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                            <p class="">Mumbai,MH</p>
+                                        </div>
+                                        <div class="flex-1 inline-flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <p class="">05-25-2021</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
+                                    <div class="flex space-x-3 text-sm font-medium">
+                                        <div class="flex-auto flex space-x-3">
+                                            <button
+                                                class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                    <svg class="w-4 h-4 opacity-80" viewBox="0 0 45 45" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                            stroke="black" stroke-width="4" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                            stroke="black" stroke-width="4" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                                <span>60 Products</span>
+                                            </button>
+                                        </div>
+                                        <button
+                                            class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                                            type="button" aria-label="like">Edit Shop</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    </html>
