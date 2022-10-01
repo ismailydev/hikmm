@@ -1,0 +1,220 @@
+<%- include('partials/header') -%>
+    <div class="flex flex-col min-h-screen backdrop-grayscale-0 bg-center bg-cover py-20"
+        style="background-image: url(https://images.unsplash.com/photo-1507608158173-1dcec673a2e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+        <div class="max-w-3xl w-11/12 mx-auto z-10 flex text-white items-center justify-between">
+            <h2 class="text-xl py-12">Welcome User</h2>
+            <div class="flex gap-4 items-center">
+                <p class="">Stores: 23</p>
+                <a href="/stores/add">
+                    <button type="button"
+                        class="inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true" data-mdb-ripple-color="light">Add New Store
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bg-black h-full opacity-75 inset-0 z-0"></div>
+        <div class="w-full md:w-3/4 mx-auto z-10">
+            <div class="overflow-auto w-11/12 md:w-3/4 mx-auto lg:overflow-visible">
+                <table class="table w-full text-gray-400 border-separate space-y-6 text-sm">
+                    <thead class="bg-gray-800 text-gray-500">
+                        <tr>
+                            <th class="p-3">Product</th>
+                            <th class="p-3 text-left">From</th>
+                            <th class="p-3 text-left">To</th>
+                            <th class="p-3">Quantity</th>
+                            <th class="p-3 text-left">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-800">
+                            <td class="p-3">
+                                <div class="flex align-items-center">
+                                    <img class="rounded-full h-12 w-12  object-cover"
+                                        src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+                                        alt="unsplash image">
+                                    <div class="ml-3">
+                                        <div class="">Appple</div>
+                                        <div class="text-gray-500">mail@rgmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">
+                                Store 1
+                            </td>
+                            <td class="p-3">
+                                Store 2
+                            </td>
+                            <td class="p-3 text-center font-bold">
+                                3
+                            </td>
+                            <td class="p-3 ">
+                                <div class="flex-1 inline-flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="">05-25-2021</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3">
+                                <div class="flex align-items-center">
+                                    <img class="rounded-full h-12 w-12   object-cover"
+                                        src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                                        alt="unsplash image">
+                                    <div class="ml-3">
+                                        <div class="">Realme</div>
+                                        <div class="text-gray-500">mail@rgmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">
+                                Store 1
+                            </td>
+                            <td class="p-3">
+                                Store 2
+                            </td>
+                            <td class="p-3 text-center font-bold">
+                                23
+                            </td>
+                            <td class="p-3">
+                                <div class="flex-1 inline-flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="">05-25-2021</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3">
+                                <div class="flex align-items-center">
+                                    <img class="rounded-full h-12 w-12   object-cover"
+                                        src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80"
+                                        alt="unsplash image">
+                                    <div class="ml-3">
+                                        <div class="">Samsung</div>
+                                        <div class="text-gray-500">mail@rgmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">
+                                Store 1
+                            </td>
+                            <td class="p-3">
+                                Store 2
+                            </td>
+                            <td class="p-3 text-center font-bold">
+                                5
+                            </td>
+                            <td class="p-3">
+                                <div class="flex-1 inline-flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="">05-25-2021</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3">
+                                <div class="flex align-items-center">
+                                    <img class="rounded-full h-12 w-12   object-cover"
+                                        src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80"
+                                        alt="unsplash image">
+                                    <div class="ml-3">
+                                        <div class="">Samsung</div>
+                                        <div class="text-gray-500">mail@rgmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">
+                                Store 1
+                            </td>
+                            <td class="p-3">
+                                Store 2
+                            </td>
+                            <td class="p-3 text-center font-bold">
+                                5
+                            </td>
+                            <td class="p-3">
+                                <div class="flex-1 inline-flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="">05-25-2021</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3">
+                                <div class="flex align-items-center">
+                                    <img class="rounded-full h-12 w-12   object-cover"
+                                        src="https://images.unsplash.com/photo-1600856209923-34372e319a5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2135&q=80"
+                                        alt="unsplash image">
+                                    <div class="ml-3">
+                                        <div class="">Samsung</div>
+                                        <div class="text-gray-500">mail@rgmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">
+                                Store 1
+                            </td>
+                            <td class="p-3">
+                                Store 2
+                            </td>
+                            <td class="p-3 text-center font-bold">
+                                5
+                            </td>
+                            <td class="p-3">
+                                <div class="flex-1 inline-flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <p class="">05-25-2021</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    </html>
+    <style>
+        .table {
+            border-spacing: 0 15px;
+        }
+
+        i {
+            font-size: 1rem !important;
+        }
+
+        .table tr {
+            border-radius: 20px;
+        }
+
+        tr td:nth-child(n+5),
+        tr th:nth-child(n+5) {
+            border-radius: 0 .625rem .625rem 0;
+        }
+
+        tr td:nth-child(1),
+        tr th:nth-child(1) {
+            border-radius: .625rem 0 0 .625rem;
+        }
+    </style>
