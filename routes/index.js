@@ -12,6 +12,9 @@ router.get("/signup", (req, res) => {
 router.get("/signin", (req, res) => {
     res.render("signin");
 });
+router.get("/transactions", (req, res) => {
+    res.render("transactions");
+});
 
 router.get("/dashboard", ensureAuth, async (req, res) => {
     try {
@@ -22,7 +25,6 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
         });
     } catch (error) {
         console.log(error);
-        res.render(error / 500);
     }
 });
 

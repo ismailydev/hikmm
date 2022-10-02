@@ -27,7 +27,7 @@ connectDB();
 
 app.use(
     session({
-        secret: "hikmm",
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         store: MongoStore.create({
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
 
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
-app.use("/store", require("./routes/store"));
-app.use("*", (req, res) => res.render("404"));
+app.use("/stores", require("./routes/stores"));
+// app.use("*", (req, res) => res.render("404"));
 
 app.listen(PORT, () => console.log(`Server listening on PORT ${PORT}`));
