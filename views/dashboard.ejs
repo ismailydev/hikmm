@@ -2,9 +2,21 @@
     <div class="flex flex-col min-h-screen backdrop-grayscale-0 bg-center bg-cover py-20"
         style="background-image: url(https://images.unsplash.com/photo-1507608158173-1dcec673a2e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
         <div class="max-w-3xl w-11/12 mx-auto z-10 flex text-white items-center justify-between">
-            <h2 class="text-xl py-12">Welcome User</h2>
+            <div class="flex items-center py-4">
+                <h2 class="text-xl">Welcome <%=name %>
+                </h2>
+                <a class="flex items-center nav-link pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                    href="/auth/signout" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                    </svg>
+                    Sign Out</a>
+            </div>
             <div class="flex gap-4 items-center">
-                <p class="">Stores: 23</p>
+                <p class="">Stores: <%=stores.length %>
+                </p>
                 <a href="/stores/add">
                     <button type="button"
                         class="inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -16,82 +28,87 @@
         <div class="absolute bg-black h-full opacity-75 inset-0 z-0"></div>
         <div class="max-w-3xl w-full mx-auto z-10">
             <div class="flex flex-col">
-                <div class="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-4 m-4">
-                    <div class="flex-none sm:flex">
-                        <div class="relative h-32 w-32   sm:mb-0 mb-3">
-                            <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
-                        </div>
-                        <div class="flex-auto sm:ml-5 justify-evenly">
-                            <div class="flex items-center justify-between sm:mt-2">
-                                <div class="flex items-center">
-                                    <div class="flex flex-col">
-                                        <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">
-                                            Store Name
-                                        </div>
-                                        <div class="flex-auto text-gray-400 my-1">
-                                            <span class="mr-3 py-2">Location</span><span
-                                                class="mr-3 border-r border-gray-600  max-h-0"></span><span>Date
-                                                Created</span>
+                <% for(let i=0; i<stores.length; i++) {%>
+                    <div class="bg-gray-900 border border-gray-900 shadow-lg  rounded-3xl p-4 m-4">
+                        <div class="flex-none sm:flex">
+                            <div class="relative h-32 w-32 sm:mb-0 mb-3">
+                                <img src="https://images.unsplash.com/photo-1604066867775-43f48e3957d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                    alt="aji" class=" w-32 h-32 rounded-2xl">
+                            </div>
+                            <div class="flex-auto sm:ml-5 justify-evenly">
+                                <div class="flex items-center justify-between sm:mt-2">
+                                    <div class="flex items-center">
+                                        <div class="flex flex-col">
+                                            <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">
+                                                <%=stores[i].name %>
+                                            </div>
+                                            <div class="flex-auto text-gray-400 my-1">
+                                                <span class="mr-3 py-2">
+                                                    <%=stores[i].location %>
+                                                </span><span
+                                                    class="mr-3 border-r border-gray-600  max-h-0"></span><span>
+                                                    <%=stores[i].createdAt %>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="flex flex-row items-center">
-                                <div class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        class="h-5 w-5 text-yellow-400">
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                        </path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        class="h-5 w-5 text-yellow-400">
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                        </path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                        fill="currentColor" class="h-5 w-5 text-yellow-400">
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                        </path>
-                                    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                        fill="currentColor" class="h-5 w-5 text-yellow-400">
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                        </path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor" class="h-5 w-5 text-yellow-400">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
-                                        </path>
-                                    </svg>
+                                <div class="flex flex-row items-center">
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                            </path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor" class="h-5 w-5 text-yellow-400">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                                            </path>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex pt-2  text-sm text-gray-400">
-                                <div class="flex-1 inline-flex items-center">
-                                    <svg class="h-4 w-4 mr-2" viewBox="0 0 45 45" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
-                                            stroke="#9CA3AF" stroke-width="4" stroke-linejoin="round" />
-                                        <path
-                                            d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
-                                            stroke="#9CA3AF" stroke-width="4" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    <p class="">23 Products</p>
+                                <div class="flex pt-2  text-sm text-gray-400">
+                                    <div class="flex-1 inline-flex items-center">
+                                        <svg class="h-4 w-4 mr-2" viewBox="0 0 45 45" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M42.3755 12.5273L22.3755 2.52734L2.37549 12.5273V32.5273L22.3755 42.5273L42.3755 32.5273V12.5273Z"
+                                                stroke="#9CA3AF" stroke-width="4" stroke-linejoin="round" />
+                                            <path
+                                                d="M2.37549 12.5273L22.3755 22.5273M22.3755 42.5273V22.5273M42.3755 12.5273L22.3755 22.5273M32.3755 7.52734L12.3755 17.5273"
+                                                stroke="#9CA3AF" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <p class="">23 Products</p>
+                                    </div>
+                                    <a href="/stores/<%= stores[i]._id%>">
+                                        <button
+                                            class="flex-no-shrink bg-cyan-500 hover:bg-cyan-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider hover:border-cyan-900 text-white rounded-full transition ease-in duration-300">Go
+                                            to Store</button>
+                                    </a>
                                 </div>
-                                <a href="/store">
-                                    <button
-                                        class="flex-no-shrink bg-cyan-500 hover:bg-cyan-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider hover:border-cyan-900 text-white rounded-full transition ease-in duration-300">Go
-                                        to Store</button>
-                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <% } %>
             </div>
         </div>
     </div>

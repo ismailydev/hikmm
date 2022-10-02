@@ -2,13 +2,17 @@
     <div class="flex flex-col min-h-screen backdrop-grayscale-0 bg-center bg-cover py-20"
         style="background-image: url(https://images.unsplash.com/photo-1507608158173-1dcec673a2e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
         <div class="w-11/12 md:w-4/5 mx-auto z-10 flex text-white items-center justify-between">
-            <h2 class="text-xl py-12">Welcome User</h2>
+            <h2 class="text-xl py-12">
+                Store: <%=store.name %>
+            </h2>
             <div class="flex gap-4 items-center">
-                <p class="">Stores: 23</p>
-                <a href="/stores/add">
+                <p class="">
+                    <%=products.length %> products
+                </p>
+                <a href="/stores/<%= store._id%>/products/add">
                     <button type="button"
                         class="inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
-                        data-mdb-ripple="true" data-mdb-ripple-color="light">Add New Store
+                        data-mdb-ripple="true" data-mdb-ripple-color="light">Add New Product
                     </button>
                 </a>
             </div>
@@ -16,138 +20,84 @@
         <div class="absolute bg-black h-full opacity-75 inset-0 z-0"></div>
         <div class="relative w-11/12 mx-auto flex flex-col items-center justify-center">
             <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-                <div class="flex flex-col">
-                    <div class="bg-gray-900 shadow-md  rounded-3xl p-4">
-                        <div class="flex-none lg:flex">
-                            <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
-                                <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
-                                    alt="Just a flower"
-                                    class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
-                            </div>
-                            <div class="flex-auto ml-3 justify-evenly py-2">
-                                <div class="flex flex-wrap ">
-                                    <div class="w-full flex-none text-xs text-cyan-700 font-medium ">
-                                        Product
-                                    </div>
-                                    <h2 class="flex-auto text-lg text-gray-100 font-medium">Product Name</h2>
+                <% for(let i=0; i<products.length; i++) {%>
+                    <div class="flex flex-col">
+                        <div class="bg-gray-900 shadow-md  rounded-3xl p-4">
+                            <div class="flex-none lg:flex">
+                                <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
+                                    <img src="https://images.unsplash.com/photo-1617360547704-3da8b5363369?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                        alt="Just a flower"
+                                        class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
                                 </div>
-                                <div class="flex items-center justify-between py-4 text-sm text-gray-500">
-                                    <div class="flex items-center justify-center">
-                                        <svg class="h-4 w-4 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-                                        </svg>
-                                        <p class="text-gray-200">23 pieces</p>
+                                <div class="flex-auto ml-3 justify-evenly py-2">
+                                    <div class="flex flex-wrap ">
+                                        <div class="w-full flex-none text-xs text-cyan-700 font-medium ">
+                                            Product
+                                        </div>
+                                        <h2 class="flex-auto text-lg text-gray-100 font-medium">
+                                            <%=products[i].name %>
+                                        </h2>
                                     </div>
-                                    <div class="flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
-                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                                        </svg>
-                                        <span class="bg-orange-400 text-gray-50 rounded-md px-2">low</span>
+                                    <div class="flex items-center justify-between py-4 text-sm text-gray-500">
+                                        <div class="flex items-center justify-center">
+                                            <svg class="h-4 w-4 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
+                                            </svg>
+                                            <p class="text-gray-200">
+                                                <%=products[i].quantity %> pieces
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
+                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                            </svg>
+                                            <span class="bg-orange-400 text-gray-50 rounded-md px-2">
+                                                <%=products[i].status %>
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="flex p-4 pb-2 border-t border-gray-700 "></div>
-                                <div class="flex items-center space-x-3 text-sm font-medium">
-                                    <div class="flex-auto flex space-x-3">
+                                    <div class="flex p-4 pb-2 border-t border-gray-700 "></div>
+                                    <div class="flex items-center space-x-3 text-sm font-medium">
+                                        <div class="flex-auto flex space-x-3">
+                                            <button
+                                                class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 ">
+                                                <input type="number" min="0" class="w-10" name="amount" placeholder="0">
+                                            </button>
+                                        </div>
+                                        <div class="flex-auto flex space-x-3">
+                                            <select name="stores" id="stores"
+                                                class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                <% for(let i=0; i<stores.length; i++) {%>
+                                                    <option value="<%=stores[i].name %>">
+                                                        <%=stores[i].name %>
+                                                    </option>
+                                                    <% } %>
+
+                                            </select>
+                                            </button>
+                                        </div>
                                         <button
-                                            class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 ">
-                                            <input type="number" min="0" class="w-10" name="amount" placeholder="0">
-                                        </button>
+                                            class="flex gap-1 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
+                                            type="button" aria-label="like">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                            </svg>
+                                            Transfer</button>
                                     </div>
-                                    <div class="flex-auto flex space-x-3">
-                                        <select name="status" id="status"
-                                            class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
-                                            <option value="Store1" selected>Store 1</option>
-                                            <option value="Store2">Store 2</option>
-                                        </select>
-                                        </button>
-                                    </div>
-                                    <button
-                                        class="flex gap-1 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
-                                        type="button" aria-label="like">
-                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                                        </svg>
-                                        Transfer</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-col">
-                    <div class="bg-gray-900 shadow-md  rounded-3xl p-4">
-                        <div class="flex-none lg:flex">
-                            <div class=" h-full w-full lg:h-48 lg:w-48   lg:mb-0 mb-3">
-                                <img src="https://images.unsplash.com/photo-1622180203374-9524a54b734d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
-                                    alt="Just a flower"
-                                    class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl">
-                            </div>
-                            <div class="flex-auto ml-3 justify-evenly py-2">
-                                <div class="flex flex-wrap ">
-                                    <div class="w-full flex-none text-xs text-cyan-700 font-medium ">
-                                        Product
-                                    </div>
-                                    <h2 class="flex-auto text-lg text-gray-100 font-medium">Product Name</h2>
-                                </div>
-                                <div class="flex items-center justify-between py-4 text-sm text-gray-500">
-                                    <div class="flex items-center justify-center">
-                                        <svg class="h-4 w-4 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-                                        </svg>
-                                        <p class="text-gray-200">23 pieces</p>
-                                    </div>
-                                    <div class="flex items-center justify-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-400"
-                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                                        </svg>
-                                        <span class="bg-orange-400 text-gray-50 rounded-md px-2">low</span>
-                                    </div>
-                                </div>
-                                <div class="flex p-4 pb-2 border-t border-gray-700 "></div>
-                                <div class="flex items-center space-x-3 text-sm font-medium">
-                                    <div class="flex-auto flex space-x-3">
-                                        <button
-                                            class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 ">
-                                            <input type="number" min="0" class="w-10" name="amount" placeholder="0">
-                                        </button>
-                                    </div>
-                                    <div class="flex-auto flex space-x-3">
-                                        <select name="status" id="status"
-                                            class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
-                                            <option value="Store1" selected>Store 1</option>
-                                            <option value="Store2">Store 2</option>
-                                        </select>
-                                        </button>
-                                    </div>
-                                    <button
-                                        class="flex gap-1 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
-                                        type="button" aria-label="like">
-                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                                        </svg>
-                                        Transfer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <% } %>
             </div>
         </div>
     </div>
