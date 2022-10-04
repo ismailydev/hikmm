@@ -14,11 +14,6 @@ const ProductSchema = new mongoose.Schema(
             ref: "Store",
             required: true,
         },
-        status: {
-            type: String,
-            default: "available",
-            enum: ["available", "low", "no stock"],
-        },
     },
     { timestamps: true }
 );

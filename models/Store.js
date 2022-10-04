@@ -12,6 +12,7 @@ const StoreSchema = new mongoose.Schema(
         },
         location: {
             type: String,
+            default: "unknown",
         },
     },
     { timestamps: true }
