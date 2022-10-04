@@ -62,29 +62,29 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="flex p-4 pb-2 border-t border-gray-700 "></div>
-                                    <div class="flex items-center space-x-3 text-sm font-medium">
+                                    <div class="flex p-4 pb-2 border-t border-gray-700"></div>
+                                    <form class="flex items-center space-x-3 text-sm font-medium" method="POST"
+                                        action="/stores/<%= store._id%>/products/<%= products[i]._id%>/transfer">
+                                        <input type="hidden" name="_method" value="PUT" />
                                         <div class="flex-auto flex space-x-3">
-                                            <button
-                                                class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 ">
-                                                <input type="number" min="0" class="w-10" name="amount" placeholder="0">
-                                            </button>
+                                            <input type="number" min="0"
+                                                class="w-20 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full inline-flex items-center space-x-2 "
+                                                name="quantity" placeholder="0">
                                         </div>
                                         <div class="flex-auto flex space-x-3">
-                                            <select name="stores" id="stores"
+                                            <select name="store" id="store"
                                                 class="bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
                                                 <% for(let i=0; i<stores.length; i++) {%>
                                                     <option value="<%=stores[i].name %>">
                                                         <%=stores[i].name %>
                                                     </option>
                                                     <% } %>
-
                                             </select>
                                             </button>
                                         </div>
                                         <button
-                                            class="flex gap-1 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
-                                            type="button" aria-label="like">
+                                            class="flex gap-1 z-10 items-center justify-center bg-cyan-600 px-4 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-cyan-700 transition duration-150 ease-in-out"
+                                            type="submit" aria-label="like">
                                             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                 class="w-6 h-6">
@@ -92,7 +92,7 @@
                                                     d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                                             </svg>
                                             Transfer</button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
