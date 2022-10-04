@@ -1,6 +1,7 @@
 const express = require("express");
 const { ensureAuth, ensureGuest } = require("../middlewares/auth.js");
 const Store = require("../models/Store.js");
+const Transaction = require("../models/Transaction.js");
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -12,11 +13,8 @@ router.get("/signup", (req, res) => {
 router.get("/signin", (req, res) => {
     res.render("signin");
 });
-router.get("/transactions", (req, res) => {
-    res.render("transactions");
-});
 
-router.get("/dashboard", ensureAuth, async (req, res) => {
+router.get("/dashboard", async (req, res) => {
     try {
         const stores = await Store.find({ user: req.user.id }).lean();
         res.render("dashboard", {
@@ -26,6 +24,19 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+});
+
+router.get("/transactions", async (req, res) => {
+    try {
+        const transactions = await Transaction.find({
+            user: req.user.id,
+        })
+            .populate("product")
+            .populate("from")
+            .populate("to")
+            .lean();
+        res.render("transactions", { transactions });
+    } catch (error) {}
 });
 
 module.exports = router;
