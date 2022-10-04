@@ -6,7 +6,6 @@ const Transaction = require("../models/Transaction");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    console.log(req.user);
     res.render("store");
 });
 router.get("/add", (req, res) => {
@@ -26,7 +25,6 @@ router.get("/:id", async (req, res) => {
         stores,
         products,
     });
-    console.log(stores);
 });
 router.post("/add", async (req, res) => {
     try {
@@ -46,7 +44,6 @@ router.post("/:id/products/add", async (req, res) => {
             name: req.body.name,
             quantity: Number(req.body.quantity),
             store: req.params.id,
-            status: req.body.status,
         });
         res.redirect("/stores/" + req.params.id);
     } catch (error) {
@@ -84,7 +81,6 @@ router.put("/:id/products/:prodID/transfer", async (req, res) => {
                 name: product.name,
                 quantity: Number(req.body.quantity),
                 store: receiver._id,
-                // status: req.body.status,
             });
         }
         await Transaction.create({
